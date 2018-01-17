@@ -31,6 +31,11 @@ gem 'devise', '~> 4.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+group :production do
+  # Use PostgreSQL as the production databse for Active Record
+  gem 'pg'
+end
+
 group :development, :test do
   # Use sqlite3 as the development database for Active Record
   gem 'sqlite3'
@@ -50,10 +55,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-group :production do
-  # Use PostgreSQL as the production databse for Active Record
-  gem 'pg'
-end
-
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+
+ruby '2.5.0'
