@@ -1,0 +1,13 @@
+<h1>Chat room - <%= @room.title %></h1>
+
+<%= form_for @message, url: '#' do |f| %>
+  <%= f.label :body %>
+  <%= f.text_area :body, autofocus: true %>
+
+  <%= f.submit 'Post' %>
+<% end %>
+
+<h3>Messages:</h3>
+<div>
+  <%= render @room.messages %>
+</div>
